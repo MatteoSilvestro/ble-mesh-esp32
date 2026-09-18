@@ -3,8 +3,17 @@
 /*
  * SPDX-FileCopyrightText: 2017 Intel Corporation
  * SPDX-FileContributor: 2018-2021 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileContributor: 2026 Matteo Silvestro
  *
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * NOTICE: this file has been modified from the ESP-IDF example
+ * examples/bluetooth/esp_ble_mesh/sensor_models/sensor_server/main/main.c
+ *
+ * Changes: added the FreeRTOS task mesh_stress_test_task, which publishes a
+ * Sensor Status message every 100 ms carrying a 4-byte little-endian
+ * application sequence number, and widened the sensor data buffers from
+ * 1 to 5 bytes to hold it.
  */
 
 #include <stdio.h>

@@ -3,8 +3,16 @@
 /*
  * SPDX-FileCopyrightText: 2017 Intel Corporation
  * SPDX-FileContributor: 2018-2021 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileContributor: 2026 Matteo Silvestro
  *
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * NOTICE: this file has been modified from the ESP-IDF example
+ * examples/bluetooth/esp_ble_mesh/sensor_models/sensor_client/main/main.c
+ *
+ * Changes: added runtime computation of Packet Delivery Ratio, lost-packet
+ * count and collision detection, derived from the application sequence
+ * number injected by the modified sensor server.
  */
 
 #include <stdio.h>

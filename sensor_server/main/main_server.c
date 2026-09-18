@@ -3,8 +3,16 @@
 /*
  * SPDX-FileCopyrightText: 2017 Intel Corporation
  * SPDX-FileContributor: 2018-2021 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileContributor: 2026 Matteo Silvestro
  *
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * NOTICE: this file has been modified from the ESP-IDF example
+ * examples/bluetooth/esp_ble_mesh/sensor_models/sensor_server/main/main.c
+ *
+ * Changes: same as main.c of this repository (periodic publication of an
+ * application sequence number), with a 500 ms transmission period instead
+ * of 100 ms. Used for the relaxed-traffic server node.
  */
 
 #include <stdio.h>
