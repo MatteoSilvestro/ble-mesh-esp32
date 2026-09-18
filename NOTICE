@@ -1,0 +1,32 @@
+BLE Mesh ESP32 — PDR measurement over a multi-hop network
+Copyright 2026 Matteo Silvestro
+
+This product includes software developed as part of ESP-IDF:
+
+    ESP-IDF — Espressif IoT Development Framework
+    https://github.com/espressif/esp-idf
+    Copyright 2018-2021 Espressif Systems (Shanghai) CO LTD
+    Copyright 2017 Intel Corporation
+    Licensed under the Apache License, Version 2.0
+
+The sources under sensor_client/ and sensor_server/ are derived from the
+example examples/bluetooth/esp_ble_mesh/sensor_models of ESP-IDF.
+
+Modifications with respect to the upstream example:
+
+  - sensor_server/main/main.c
+      Added the FreeRTOS task mesh_stress_test_task, which periodically
+      publishes a Sensor Status message carrying a 4-byte little-endian
+      application sequence number. Sensor data buffers were widened from
+      1 to 5 bytes accordingly.
+
+  - sensor_client/main/main.c
+      Added runtime computation of Packet Delivery Ratio, lost-packet count
+      and collision detection, based on the sequence number injected by the
+      server.
+
+  - sensor_server/main/main_server.c, sensor_server/main/main_relay.c
+      Variants of the modified server used respectively for relaxed-rate
+      traffic generation and for the forward-only relay node.
+
+All original SPDX license headers have been preserved.
